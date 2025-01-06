@@ -333,8 +333,7 @@ void menuProduct(){
 	    printf("3. Fix Product\n");
 	    printf("4. Delete Product\n");
 	    printf("5. Arrange Product\n");
-	    printf("6. Find Product\n");
-	    printf("7. Exit\n");
+	    printf("6. Exit\n");
 	    printf("==========================================\n");
 	    printf("Your choice:");
 	    scanf("%d",&choice5);
@@ -379,13 +378,10 @@ void menuProduct(){
 	    		break;
 	    	case 6:
 	    		break;
-	    	case 7:
-	    		break;
 	    		default:
 	    			printf("Invalid selection\n");
-	    	
 		}
-    }while(choice5!=7);
+    }while(choice5!=6);
 }
 void printProduct(int *length, struct Product *customer){
 	int i;
@@ -628,16 +624,17 @@ void readFileProduct(int *length, struct Product *customer){
 	fclose(ptr);
 }
 void productFiltering(int *n, struct Category *user,int *length, struct Product *customer){
-	int choice8;
-	do{
-		system("cls");
-		printf("1.Filter by category\n");
-		printf("2.Filter by price\n");
-		printf("3.Exit\n");
-		printf("Your choice:");
-		scanf("%d",&choice8);
-		switch(choice8){
-			
-		}
-	}while(choice8!=3);
+//	int choice8;
+//	do{
+//		system("cls");
+//		printf("1.Filter by category\n");
+//		printf("2.Filter by price\n");
+//		printf("3.Exit\n");
+//		printf("Your choice:");
+//		scanf("%d",&choice8);
+//		switch(choice8){
+//			case 1:
+//		
+//		}
+//	}while(choice8!=3);
 }
