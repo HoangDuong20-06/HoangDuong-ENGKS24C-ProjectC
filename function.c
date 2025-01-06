@@ -592,12 +592,19 @@ void auditProduct(int *length, struct Product *customer){
 			audit=i;
 		}
 		if(strlen(customer[i].productName)==0){
-			printf("NAME CATEGORY category cannot be left blank\n");
+			printf("NAME CATEGORY cannot be left blank\n");
 			printf("Enter name category of %s again:\n",customer[i].productId);
 			fgets(customer[i].productName,100,stdin);
 			customer[i].productName[strcspn(customer[i].productName,"\n")]='\0';
 			audit=i;
 		}
+		if(strlen(customer[i].productId)==0){
+			printf("Product ID cannot be left blank\n");
+			printf("Enter Product ID of %s again:\n",customer[i].productName);
+			fgets(customer[i].productId,100,stdin);
+			customer[i].productId[strcspn(customer[i].productId,"\n")]='\0';
+			audit=i;
+	    }
 	}
 	if(audit==-1){
 		printf("Data correct\n");
@@ -622,19 +629,4 @@ void readFileProduct(int *length, struct Product *customer){
 	}
 	printf("Read data success\n");
 	fclose(ptr);
-}
-void productFiltering(int *n, struct Category *user,int *length, struct Product *customer){
-//	int choice8;
-//	do{
-//		system("cls");
-//		printf("1.Filter by category\n");
-//		printf("2.Filter by price\n");
-//		printf("3.Exit\n");
-//		printf("Your choice:");
-//		scanf("%d",&choice8);
-//		switch(choice8){
-//			case 1:
-//		
-//		}
-//	}while(choice8!=3);
 }
