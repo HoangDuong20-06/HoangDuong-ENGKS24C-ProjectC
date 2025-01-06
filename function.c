@@ -52,6 +52,8 @@ void menuCategory(){
 		    	system("cls");
 		    	fixCategory(&n,user);
 		    	printCategory(&n,user);
+		    	checkCategory(&n,user);
+		    	printCategory(&n,user);
 		    	printf("Enter any key to back to menu:");
 		    	getchar();
 			    break;
@@ -116,7 +118,6 @@ void fixCategory(int *n, struct Category *user){
 		printf("Enter Category:");
 	    fgets(user[findIndex].categoryName,100,stdin);
 	    user[findIndex].categoryName[strcspn(user[findIndex].categoryName,"\n")]='\0';
-	    printf("Fix complete\n");
 	}
 }
 void deleteCategory(int *n, struct Category *user){
@@ -270,7 +271,7 @@ void checkCategory(int *n, struct Category *user){
 		for(j=0;j<*n;j++){
 			if(i!=j&& strcmp(user[i].categoryName,user[j].categoryName)==0){
 				printf("The Category Name cannot be the same\n");
-				printf("Enter category name of %s agian:\n",user[i].categoryId);
+				printf("Enter category name of %s again:\n",user[i].categoryId);
 				fgets(user[i].categoryName,100,stdin);
 				user[i].categoryName[strcspn(user[i].categoryName,"\n")]='\0';
 				j--;
@@ -341,8 +342,8 @@ void menuProduct(){
 	    switch(choice5){
 	    	case 1:
 	    		system("cls");
-	    		printProduct(&length,customer);
 	    		readFileProduct(&length,customer);
+	    		printProduct(&length,customer);
 	    		printf("Enter any key to back to menu:");
 		    	getchar();
 	    		break;
@@ -360,7 +361,7 @@ void menuProduct(){
 	    	case 3:
 	    		system("cls");
 	    		fixProduct(&length,customer);
-	    		saveFileProduct(&length,customer);
+	    		auditProduct(&length,customer);
 	    		printProduct(&length,customer);
 	    		printf("Enter any key to back to menu:");
 		    	getchar();
@@ -368,7 +369,6 @@ void menuProduct(){
 	    	case 4:
 	    		system("cls");
 	    		deleteProduct(&length,customer);
-	    		saveFileProduct(&length,customer);
 	    		printProduct(&length,customer);
 	    		printf("Enter any key to back to menu:");
 		    	getchar();
@@ -380,18 +380,10 @@ void menuProduct(){
 	    	case 6:
 	    		break;
 	    	case 7:
-	    		system("cls");
-		    	auditProduct(&length,customer);
-		    	printf("Enter any key to back to menu:");
-		    	getchar();
-			    break;
-	    		break;
-	    	case 8:
-	    		break;
-	    	case 9:
 	    		break;
 	    		default:
 	    			printf("Invalid selection\n");
+	    	
 		}
     }while(choice5!=7);
 }
@@ -573,7 +565,7 @@ void auditProduct(int *length, struct Product *customer){
 		for(x=0;x<*length;x++){
 			if(i!=x&& strcmp(customer[i].productName,customer[x].productName)==0){
 				printf("The Category Name cannot be the same\n");
-				printf("Enter category name of %s agian:\n",customer[x].categoryId);
+				printf("Enter category name of %s again:\n",customer[x].categoryId);
 				fgets(customer[i].productName,100,stdin);
 				customer[i].productName[strcspn(customer[i].productName,"\n")]='\0';
 				x--;
@@ -586,7 +578,7 @@ void auditProduct(int *length, struct Product *customer){
 		for(x=0;x<*length;x++){
 			if(i!=x&& strcmp(customer[i].productId,customer[x].productId)==0){
 				printf("The Product ID cannot be the same\n");
-				printf("Enter Product ID of %s agian:\n",customer[x].productName);
+				printf("Enter Product ID of %s again:\n",customer[x].productName);
 				fgets(customer[i].productId,100,stdin);
 				customer[i].productId[strcspn(customer[i].productId,"\n")]='\0';
 				x--;
