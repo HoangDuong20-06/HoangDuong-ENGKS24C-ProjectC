@@ -1,0 +1,22 @@
+#include"datatype.h"
+void menuStore();
+void menuCategory();
+void printCategory(int *n, struct Category *user);
+void moreCategory(int *n, struct Category *user);
+void fixCategory(int *n, struct Category *user);
+void deleteCategory(int *n, struct Category *user);
+void arrangeCategory(int *n, struct Category *user);
+void findCategory(int *n, struct Category *user);
+void checkCategory(int *n, struct Category *user);
+void saveFileCategory(int *n, struct Category *user);
+void readFileCategory(int *n, struct Category *user);
+void menuProduct();
+void printProduct(int *length, struct Product *customer);
+void scanProduct(int *length, struct Product *customer);
+void fixProduct(int *length, struct Product *customer);
+void deleteProduct(int *length, struct Product *customer);
+void arrangeProduct(int *length, struct Product *customer);
+void auditProduct(int *length, struct Product *customer);
+void saveFileProduct(int *length, struct Product *customer);
+void readFileProduct(int *length, struct Product *customer);
+void productFiltering(int *n, struct Category *user,int *length, struct Product *customer);
